@@ -2,5 +2,163 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "log-validation-errors-lib": {
+      "projectType": "library",
+      "root": "projects/log-validation-errors-lib",
+      "sourceRoot": "projects/log-validation-errors-lib/src",
+      "prefix": "lve",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/log-validation-errors-lib/tsconfig.lib.json",
+            "project": "projects/log-validation-errors-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/log-validation-errors-lib/src/test.ts",
+            "tsConfig": "projects/log-validation-errors-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/log-validation-errors-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/log-validation-errors-lib/tsconfig.lib.json",
+              "projects/log-validation-errors-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "log-validation-errors-tester": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/log-validation-errors-tester",
+      "sourceRoot": "projects/log-validation-errors-tester/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/log-validation-errors-tester",
+            "index": "projects/log-validation-errors-tester/src/index.html",
+            "main": "projects/log-validation-errors-tester/src/main.ts",
+            "polyfills": "projects/log-validation-errors-tester/src/polyfills.ts",
+            "tsConfig": "projects/log-validation-errors-tester/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/log-validation-errors-tester/src/favicon.ico",
+              "projects/log-validation-errors-tester/src/assets"
+            ],
+            "styles": [
+              "projects/log-validation-errors-tester/src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/log-validation-errors-tester/src/environments/environment.ts",
+                  "with": "projects/log-validation-errors-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "log-validation-errors-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "log-validation-errors-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "log-validation-errors-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/log-validation-errors-tester/src/test.ts",
+            "polyfills": "projects/log-validation-errors-tester/src/polyfills.ts",
+            "tsConfig": "projects/log-validation-errors-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/log-validation-errors-tester/karma.conf.js",
+            "assets": [
+              "projects/log-validation-errors-tester/src/favicon.ico",
+              "projects/log-validation-errors-tester/src/assets"
+            ],
+            "styles": [
+              "projects/log-validation-errors-tester/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/log-validation-errors-tester/tsconfig.app.json",
+              "projects/log-validation-errors-tester/tsconfig.spec.json",
+              "projects/log-validation-errors-tester/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/log-validation-errors-tester/e2e/protractor.conf.js",
+            "devServerTarget": "log-validation-errors-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "log-validation-errors-tester:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "log-validation-errors-lib"
 }

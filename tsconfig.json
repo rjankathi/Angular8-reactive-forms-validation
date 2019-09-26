@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "log-validation-errors-lib": [
+        "dist/log-validation-errors-lib"
+      ],
+      "log-validation-errors-lib/*": [
+        "dist/log-validation-errors-lib/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
