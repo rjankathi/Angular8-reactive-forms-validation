@@ -3,33 +3,33 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "log-validation-errors-lib": {
+    "rxforms-validation-errors": {
       "projectType": "library",
-      "root": "projects/log-validation-errors-lib",
-      "sourceRoot": "projects/log-validation-errors-lib/src",
+      "root": "projects/rxforms-validation-errors",
+      "sourceRoot": "projects/rxforms-validation-errors/src",
       "prefix": "lve",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/log-validation-errors-lib/tsconfig.lib.json",
-            "project": "projects/log-validation-errors-lib/ng-package.json"
+            "tsConfig": "projects/rxforms-validation-errors/tsconfig.lib.json",
+            "project": "projects/rxforms-validation-errors/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/log-validation-errors-lib/src/test.ts",
-            "tsConfig": "projects/log-validation-errors-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/log-validation-errors-lib/karma.conf.js"
+            "main": "projects/rxforms-validation-errors/src/test.ts",
+            "tsConfig": "projects/rxforms-validation-errors/tsconfig.spec.json",
+            "karmaConfig": "projects/rxforms-validation-errors/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/log-validation-errors-lib/tsconfig.lib.json",
-              "projects/log-validation-errors-lib/tsconfig.spec.json"
+              "projects/rxforms-validation-errors/tsconfig.lib.json",
+              "projects/rxforms-validation-errors/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -38,28 +38,28 @@
         }
       }
     },
-    "log-validation-errors-tester": {
+    "rxforms-validation-errors-tester": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/log-validation-errors-tester",
-      "sourceRoot": "projects/log-validation-errors-tester/src",
+      "root": "projects/rxforms-validation-errors-tester",
+      "sourceRoot": "projects/rxforms-validation-errors-tester/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/log-validation-errors-tester",
-            "index": "projects/log-validation-errors-tester/src/index.html",
-            "main": "projects/log-validation-errors-tester/src/main.ts",
-            "polyfills": "projects/log-validation-errors-tester/src/polyfills.ts",
-            "tsConfig": "projects/log-validation-errors-tester/tsconfig.app.json",
+            "outputPath": "dist/rxforms-validation-errors-tester",
+            "index": "projects/rxforms-validation-errors-tester/src/index.html",
+            "main": "projects/rxforms-validation-errors-tester/src/main.ts",
+            "polyfills": "projects/rxforms-validation-errors-tester/src/polyfills.ts",
+            "tsConfig": "projects/rxforms-validation-errors-tester/tsconfig.app.json",
             "aot": false,
             "assets": [
-              "projects/log-validation-errors-tester/src/favicon.ico",
-              "projects/log-validation-errors-tester/src/assets"
+              "projects/rxforms-validation-errors-tester/src/favicon.ico",
+              "projects/rxforms-validation-errors-tester/src/assets"
             ],
             "styles": [
-              "projects/log-validation-errors-tester/src/styles.css",
+              "projects/rxforms-validation-errors-tester/src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
@@ -71,8 +71,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/log-validation-errors-tester/src/environments/environment.ts",
-                  "with": "projects/log-validation-errors-tester/src/environments/environment.prod.ts"
+                  "replace": "projects/rxforms-validation-errors-tester/src/environments/environment.ts",
+                  "with": "projects/rxforms-validation-errors-tester/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -102,33 +102,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "log-validation-errors-tester:build"
+            "browserTarget": "rxforms-validation-errors-tester:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "log-validation-errors-tester:build:production"
+              "browserTarget": "rxforms-validation-errors-tester:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "log-validation-errors-tester:build"
+            "browserTarget": "rxforms-validation-errors-tester:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/log-validation-errors-tester/src/test.ts",
-            "polyfills": "projects/log-validation-errors-tester/src/polyfills.ts",
-            "tsConfig": "projects/log-validation-errors-tester/tsconfig.spec.json",
-            "karmaConfig": "projects/log-validation-errors-tester/karma.conf.js",
+            "main": "projects/rxforms-validation-errors-tester/src/test.ts",
+            "polyfills": "projects/rxforms-validation-errors-tester/src/polyfills.ts",
+            "tsConfig": "projects/rxforms-validation-errors-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/rxforms-validation-errors-tester/karma.conf.js",
             "assets": [
-              "projects/log-validation-errors-tester/src/favicon.ico",
-              "projects/log-validation-errors-tester/src/assets"
+              "projects/rxforms-validation-errors-tester/src/favicon.ico",
+              "projects/rxforms-validation-errors-tester/src/assets"
             ],
             "styles": [
-              "projects/log-validation-errors-tester/src/styles.css"
+              "projects/rxforms-validation-errors-tester/src/styles.css"
             ],
             "scripts": []
           }
@@ -137,9 +137,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/log-validation-errors-tester/tsconfig.app.json",
-              "projects/log-validation-errors-tester/tsconfig.spec.json",
-              "projects/log-validation-errors-tester/e2e/tsconfig.json"
+              "projects/rxforms-validation-errors-tester/tsconfig.app.json",
+              "projects/rxforms-validation-errors-tester/tsconfig.spec.json",
+              "projects/rxforms-validation-errors-tester/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -149,16 +149,16 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/log-validation-errors-tester/e2e/protractor.conf.js",
-            "devServerTarget": "log-validation-errors-tester:serve"
+            "protractorConfig": "projects/rxforms-validation-errors-tester/e2e/protractor.conf.js",
+            "devServerTarget": "rxforms-validation-errors-tester:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "log-validation-errors-tester:serve:production"
+              "devServerTarget": "rxforms-validation-errors-tester:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "log-validation-errors-lib"
+  "defaultProject": "rxforms-validation-errors"
 }

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LogValidationErrorsLibModule,LogValidationErrorsLibService } from 'log-validation-errors-lib';
+import { RxFormsValidationErrorsModule } from 'rxforms-validation-errors';
 
 @NgModule({
   declarations: [
@@ -13,10 +13,10 @@ import { LogValidationErrorsLibModule,LogValidationErrorsLibService } from 'log-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LogValidationErrorsLibModule,
+    RxFormsValidationErrorsModule,
     ReactiveFormsModule,
   ],
-  providers: [LogValidationErrorsLibService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

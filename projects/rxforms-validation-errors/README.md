@@ -1,6 +1,12 @@
-# LogValidationErrorsLib
+# RxValidationErrors
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+A simple Angular library that exposes a ValidationErrorsService which simplifies the Reactive Forms validations.
+
+Move validation messages to the component class which helps.
+1. Easily unit test validation logic.
+2. No hard coding of validation messages in the application
+3. Change validation dynamically at run time.
+
 
 ## Code scaffolding
 

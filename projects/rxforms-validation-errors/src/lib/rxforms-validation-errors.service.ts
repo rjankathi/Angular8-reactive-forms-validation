@@ -4,7 +4,7 @@ import { FormGroup,AbstractControl} from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class LogValidationErrorsLibService {
+export class RxFormsValidationErrorsService {
 
   constructor() { }
 

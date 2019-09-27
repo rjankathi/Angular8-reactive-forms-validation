@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { LogValidationErrorsLibService } from 'log-validation-errors-lib';
+import { RxFormsValidationErrorsService } from 'rxforms-validation-errors';
 import {FormControl,FormArray,FormGroup,FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import {FormControl,FormArray,FormGroup,FormBuilder, Validators} from '@angular/
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Show Reactive Form Validation Errors Tester';
+  title = 'Reactive Forms Validation Errors Tester';
   employeeForm : FormGroup;
   formErrors= {};
   validationMessages = {
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
        'required': 'Phone is required.'
      }
   };
-  constructor(private fb:FormBuilder,private _showValidationErrors: LogValidationErrorsLibService){
+  constructor(private fb:FormBuilder,private _validationErrors: RxFormsValidationErrorsService){
 
   }
   
@@ -51,6 +51,10 @@ export class AppComponent implements OnInit {
         this.addSkillFormGroup()
       ])
     });
+
+    this.employeeForm.valueChanges.subscribe(data =>{
+      this.validate();
+    });
   }
 
   addSkillFormGroup() : FormGroup{
@@ -62,7 +66,7 @@ export class AppComponent implements OnInit {
   }
 
   validate(){
-    this._showValidationErrors.logValidationErrors(this.employeeForm, this.formErrors,this.validationMessages)
+    this._validationErrors.logValidationErrors(this.employeeForm, this.formErrors,this.validationMessages)
   }
 
 }

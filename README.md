@@ -1,27 +1,148 @@
-# LogValidationErrorsLib
+# RxFormsValidationErrors Lib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
+A Simple Angular library service to validate reactive forms inside the component
 
-## Development server
+## Purpose
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Move validation messages to the component class which helps 
 
-## Code scaffolding
+- Easily unit test validation logic.
+- No hard coding of validation messages in the application like in the example html below.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ```html
+    <div class="form-group"
+      [ngClass]="{'has-error': ((employeeForm.get('fullName').touched ||
+                                 employeeForm.get('fullName').dirty) &&
+                                 employeeForm.get('fullName').errors)}">
+    <label class="col-sm-2 control-label" for="fullName">Full Name</label>
+    <div class="col-sm-8">
+        <input id="fullName" type="text" class="form-control" formControlName="fullName">
+        <span class="help-block"
+            *ngIf="((employeeForm.get('fullName').touched ||
+                    employeeForm.get('fullName').dirty) &&
+                    employeeForm.get('fullName').errors)">
+        <span *ngIf="employeeForm.get('fullName').errors.required">
+            Full Name is required
+        </span>
+        <span *ngIf="employeeForm.get('fullName').errors.minlength ||
+                    employeeForm.get('fullName').errors.maxlength">
+            Full Name must be greater than 2 characters and less than 10 characters
+        </span>
+        </span>
+    </div>
+    </div>
+    ```
 
-## Build
+- The RxFormsValidation service helps to get rid of all the error messages clutter form all your components `html` files. All the complex logic is moved to the component class
+- Change validation dynamically at run time.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Installation
 
-## Running unit tests
+```npm
+npm i NgRx-forms-validation
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## API
 
-## Running end-to-end tests
+1. Register the `RxFormsValidationErrorsModule` in your app module
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```javascript
 
-## Further help
+import { RxFormsValidationErrorsModule } from 'rxforms-validation-errors'
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+
+2. Add RxFormsValidationErrorsModule to imports array in app.module.ts
+
+```javascript
+imports:[RxFormsValidationErrorsModule]
+```
+
+3. Import RxFormsValidationErrorsService from 'rxforms-validation-errors'  library.
+
+```javascript
+import { RxFormsValidationErrorsService } from 'rxforms-validation-errors';
+```
+
+4. Import RxFormsValidationErrorsService into the component you like to remove redundant validation messages in side the components html.
+
+   - In our tester app I have imported into the app.component.ts like below
+  
+  
+5. Import RxFormsValidationErrorsService in app.component.ts
+  
+  ```javascript
+  import { RxFormsValidationErrorsService } from 'rxforms-validation-errors';
+  ```
+
+6. Inject RxFormsValidationService  
+  
+  ```javascript
+    constructor(private _validationMessages: RxFormsValidationErrorsService){}
+  ```
+7. for any validation messsages on the forms use the `FormGroup` i.e employeeForm in our app. When any of the form control value in employee form changes the function validate() is called which triggers the RxFormsValidationService's showValidationErrors() method. You can do this in ngOnInit()
+   
+   ```javascript
+    this.employeeForm.valueChanges.subscribe(data =>{
+      this.validate();
+    });
+   ```
+
+8. Use the showValidationMessages() method.
+ 
+    ```javascript
+     validate(){
+    this._validationMessages.showValidationErrors(this.form, this.formErrors,this.validationMessages)
+     }
+    ```
+
+9.  Parameters to the showValidationErrors() method are described below.
+  
+| parameter | type | Description |
+| --- | --- |--- |
+| form | `FormGroup` | Angular FormGroup which extends `AbstractControl` 
+| formErrors | `object` | An empty object which holds the error messages of a particular `FormControl` |
+| validationMessages | `object` | An object which holds all the validation messages in your application |
+
+10. When a control loses focus, our validation is not triggered. This is because valueChanges observable does not emit an event when the control loses focus. It only emits an event when the value changes. Bind the blur() event and call the validate() method in the app.component.html to the input element which has the `formControlName`
+    `(blur)=validate()`.  
+  
+11.  Use the formErrors object in the app.component.html file with int the `[ngClass]`. The UI will bind to this object to display the validation errors directive as below
+    `[ngClass]="{'has-error':formErrors.fullName}"`
+  
+12.  Our sample application passes the following params to the show ValidationErrors()
+
+ - ```javascript
+        formErrors= {};
+      ```
+
+- ```javascript
+        validationMessages = {
+            'fullName' :{
+            'required' : 'Full Name is required.',
+            'minlength' : 'Full Name must be greater than 2 characters.',
+            'maxlength': 'Full Name must be less than 10 characters'
+            },
+            'email' :{
+            'required': 'Email is required.',
+            'emailDomain':'Email domain should be sora.com'
+            },
+            'confirmEmail' :{
+            'required': 'Confirm Email is required.',
+            'emailDomain':'Confirm Email domain should be sora.com'
+            },
+            'emailGroup':{
+            'emailMismatch':'Email and Confirm Email do not match'
+            },
+            'phone' :{
+            'required': 'Phone is required.'
+            }
+        };
+
+        ```
+
+---
+**NOTE**
+
+RxFormsValidationErrors library depends on ReactiveFormsModule( Ofcourse angular needs it to work with Reactive Forms right ;) )
+---

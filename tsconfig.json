@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "log-validation-errors-lib": [
-        "dist/log-validation-errors-lib"
+      "rxforms-validation-errors": [
+        "dist/rxforms-validation-errors"
       ],
-      "log-validation-errors-lib/*": [
-        "dist/log-validation-errors-lib/*"
+      "rxforms-validation-errors/*": [
+        "dist/rxforms-validation-errors/*"
       ]
     }
   },

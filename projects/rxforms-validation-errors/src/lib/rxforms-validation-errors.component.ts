@@ -10,7 +10,7 @@ import { FormGroup,AbstractControl} from '@angular/forms';
   `,
   styles: []
 })
-export class LogValidationErrorsLibComponent implements OnInit {
+export class RxValidationErrorsComponent implements OnInit {
   
   constructor() { }
 
