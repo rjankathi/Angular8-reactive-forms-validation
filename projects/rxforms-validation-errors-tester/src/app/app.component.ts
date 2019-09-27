@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
   }
 
   validate(){
-    this._validationErrors.logValidationErrors(this.employeeForm, this.formErrors,this.validationMessages)
+    this._validationErrors.showValidationMessages(this.employeeForm, this.formErrors,this.validationMessages)
   }
 
 }

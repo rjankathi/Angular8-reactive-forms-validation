@@ -8,7 +8,7 @@ export class RxFormsValidationErrorsService {
 
   constructor() { }
 
-  logValidationErrors(group: FormGroup,formErrors:{},validationMessages:{}): void{
+  showValidationMessages(group: FormGroup,formErrors:{},validationMessages:{}): void{
     Object.keys(group.controls).forEach((key:string)=>{
       const abstractControl = group.get(key);
         formErrors[key] = '';
@@ -24,7 +24,7 @@ export class RxFormsValidationErrorsService {
       }
 
       if(abstractControl instanceof FormGroup){
-        this.logValidationErrors(abstractControl,formErrors,validationMessages);
+        this.showValidationMessages(abstractControl,formErrors,validationMessages);
       } 
   });  
 }

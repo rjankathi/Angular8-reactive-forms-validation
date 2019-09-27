@@ -1,4 +1,4 @@
-# RxFormsValidationErrors Lib
+# RxFormsValidation
 
 A Simple Angular library service to validate reactive forms inside the component
 
@@ -39,7 +39,7 @@ Move validation messages to the component class which helps
 ## Installation
 
 ```npm
-npm i NgRx-forms-validation
+npm i ng-rxforms-validation
 ```
 
 ## API
@@ -110,7 +110,7 @@ import { RxFormsValidationErrorsService } from 'rxforms-validation-errors';
 11.  Use the formErrors object in the app.component.html file with int the `[ngClass]`. The UI will bind to this object to display the validation errors directive as below
     `[ngClass]="{'has-error':formErrors.fullName}"`
   
-12.  Our sample application passes the following params to the show ValidationErrors()
+12.  Our sample application passes the following params to the showValidationMessages()
 
  - ```javascript
         formErrors= {};
