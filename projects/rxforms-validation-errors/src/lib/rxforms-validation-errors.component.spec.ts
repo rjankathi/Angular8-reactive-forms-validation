@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxValidationErrorsComponent } from './rxforms-validation-errors.component';
+import { RxValidationComponent } from './rxforms-validation-errors.component';
 
-describe('RxValidationErrorsComponent', () => {
-  let component: RxValidationErrorsComponent;
-  let fixture: ComponentFixture<RxValidationErrorsComponent>;
+describe('RxValidationComponent', () => {
+  let component: RxValidationComponent;
+  let fixture: ComponentFixture<RxValidationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RxValidationErrorsComponent ]
+      declarations: [ RxValidationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RxValidationErrorsComponent);
+    fixture = TestBed.createComponent(RxValidationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

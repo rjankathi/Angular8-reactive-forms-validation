@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RxFormsValidationErrorsService } from './rxforms-validation-errors.service';
+import { RxFormsValidationService } from './rxforms-validation-errors.service';
 
-describe('RxFormsValidationErrorsService', () => {
+describe('RxFormsValidationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RxFormsValidationErrorsService = TestBed.get(RxFormsValidationErrorsService);
+    const service: RxFormsValidationService = TestBed.get(RxFormsValidationService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { RxFormsValidationErrorsService } from 'rxforms-validation-errors';
+import { RxFormsValidationService } from 'rxforms-validation-errors';
 import {FormControl,FormArray,FormGroup,FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import {FormControl,FormArray,FormGroup,FormBuilder, Validators} from '@angular/
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Reactive Forms Validation Errors Tester';
+  title = 'Reactive Forms Validation Tester';
   employeeForm : FormGroup;
   formErrors= {};
   validationMessages = {
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
        'required': 'Phone is required.'
      }
   };
-  constructor(private fb:FormBuilder,private _validationErrors: RxFormsValidationErrorsService){
+  constructor(private fb:FormBuilder,private _validationErrors: RxFormsValidationService){
 
   }
   

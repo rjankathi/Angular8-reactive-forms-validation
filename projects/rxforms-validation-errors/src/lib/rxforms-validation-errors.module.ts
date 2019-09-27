@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RxValidationErrorsComponent } from './rxforms-validation-errors.component';
+import { RxValidationComponent } from './rxforms-validation-errors.component';
 
 
 @NgModule({
-  declarations: [RxValidationErrorsComponent],
+  declarations: [RxValidationComponent],
   imports: [
   ],
-  exports: [RxValidationErrorsComponent],
+  exports: [RxValidationComponent],
 })
-export class RxFormsValidationErrorsModule { }
+export class RxFormsValidationModule { }

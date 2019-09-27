@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RxFormsValidationErrorsModule } from 'rxforms-validation-errors';
+import { RxFormsValidationModule } from 'rxforms-validation-errors';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { RxFormsValidationErrorsModule } from 'rxforms-validation-errors';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RxFormsValidationErrorsModule,
+    RxFormsValidationModule,
     ReactiveFormsModule,
   ],
   providers: [],
