@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ng-rxforms": [
-        "dist/ng-rxforms"
+      "ng-rxforms-validation": [
+        "dist/ng-rxforms-validation"
       ],
-      "ng-rxforms/*": [
-        "dist/ng-rxforms/*"
+      "ng-rxforms-validation/*": [
+        "dist/ng-rxforms-validation/*"
       ]
     }
   },
