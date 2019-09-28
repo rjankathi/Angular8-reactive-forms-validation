@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { RxFormsValidationService } from 'ng-rxforms';
+import { RxFormsValidationService } from 'dist/ng-rxforms-validation';
 import {FormControl,FormArray,FormGroup,FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
        'required': 'Phone is required.'
      }
   };
-  constructor(private fb:FormBuilder,private _validationErrors: RxFormsValidationService){
+  constructor(private fb:FormBuilder,private _validationErrors:RxFormsValidationService){
 
   }
   

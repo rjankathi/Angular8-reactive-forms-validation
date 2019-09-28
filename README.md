@@ -41,7 +41,7 @@ Move validation messages to the component class which helps
 ## Installation
 
 ```npm
-npm i ng-rxforms
+npm i ng-rxforms-validation
 ```
 
 ## API
@@ -50,7 +50,7 @@ npm i ng-rxforms
 
 ```javascript
 
-import { RxFormsValidationModule } from 'ng-rxforms'
+import { RxFormsValidationModule } from 'ng-rxforms-validation'
 
 ```
 
@@ -60,10 +60,10 @@ import { RxFormsValidationModule } from 'ng-rxforms'
 imports:[RxFormsValidationModule]
 ```
 
-1. Import RxFormsValidationService from 'ng-rxforms'  library.
+1. Import RxFormsValidationService from 'ng-rxforms-validation'  library.
 
 ```javascript
-import { RxFormsValidationService } from 'ng-rxforms';
+import { RxFormsValidationService } from 'ng-rxforms-validation';
 ```
 
 4. Import RxFormsValidationService into the component you like to remove redundant validation messages in side the components html.
@@ -74,7 +74,7 @@ import { RxFormsValidationService } from 'ng-rxforms';
 5. Import RxFormsValidationService in app.component.ts
   
   ```javascript
-  import { RxFormsValidationService } from 'ng-rxforms';
+  import { RxFormsValidationService } from 'ng-rxforms-validation';
   ```
 
 6. Inject RxFormsValidationService  
@@ -142,11 +142,11 @@ import { RxFormsValidationService } from 'ng-rxforms';
             }
         };
 
-        ```
+    ```
 
 ---
 **NOTE**
 
-RxFormsValidationErrors library depends on ReactiveFormsModule( Ofcourse angular needs it to work with Reactive Forms right ;) )
+RxFormsValidation library depends on ReactiveFormsModule( Of course angular needs it to work with Reactive Forms right ;) )
 
 ---

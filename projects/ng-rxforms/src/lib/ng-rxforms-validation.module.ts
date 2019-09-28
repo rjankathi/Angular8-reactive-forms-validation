@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RxValidationComponent } from './ng-rxforms.component';
+import { RxValidationComponent } from './ng-rxforms-validation.component';
 
 
 @NgModule({

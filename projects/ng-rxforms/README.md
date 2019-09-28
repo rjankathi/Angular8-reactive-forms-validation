@@ -39,7 +39,7 @@ Move validation messages to the component class which helps.
 ## Installation
 
 ```npm
-npm i ng-rxforms
+npm i ng-rxforms-validation
 ```
 
 ## API
@@ -48,7 +48,7 @@ npm i ng-rxforms
 
 ```javascript
 
-import { RxFormsValidationModule } from 'ng-rxforms'
+import { RxFormsValidationModule } from 'ng-rxforms-validation'
 
 ```
 
@@ -61,7 +61,7 @@ imports:[RxFormsValidationModule]
 1. Import RxFormsValidationService from 'ng-rxforms'  library.
 
 ```javascript
-import { RxFormsValidationService } from 'ng-rxforms';
+import { RxFormsValidationService } from 'ng-rxforms-validation';
 ```
 
 4. Import `RxFormsValidationService` into the component you like to remove redundant validation messages in side the components html.
@@ -72,7 +72,7 @@ import { RxFormsValidationService } from 'ng-rxforms';
 5. Import RxFormsValidationService in app.component.ts
   
   ```javascript
-  import { RxFormsValidationService } from 'ng-rxforms';
+  import { RxFormsValidationService } from 'ng-rxforms-validation';
   ```
 
 6. Inject `RxFormsValidationService`  
@@ -97,11 +97,11 @@ import { RxFormsValidationService } from 'ng-rxforms';
      }
     ```
 
-9.  Parameters to the showValidationErrors() method are described below.
+9. Parameters to the showValidationErrors() method are described below.
   
 | parameter | type | Description |
 | --- | --- |--- |
-| form | `FormGroup` | Angular FormGroup which extends `AbstractControl` 
+| form | `FormGroup` | Angular FormGroup which extends `AbstractControl`
 | formErrors | `object` | An empty object which holds the error messages of a particular `FormControl` |
 | validationMessages | `object` | An object which holds all the validation messages in your application |
 

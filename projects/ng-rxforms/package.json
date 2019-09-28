@@ -1,6 +1,22 @@
 {
-  "name": "ng-rxforms",
+  "name": "ng-rxforms-validation",
   "version": "1.0.0",
+  "description": "A simple library service to bes used with Angular Reactive forms to unit test validation logic, avoid har coding validation mes=ssages in the the apps html and change validation dynamically at run time.",
+  "author": "Raj Ankathi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjankathi/Angular8-reactive-forms-validation"
+  },
+  "bugs": {
+    "url": "https://github.com/rjankathi/Angular8-reactive-forms-validation/issues"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "reactive-forms",
+    "service"
+  ],
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^8.2.0",
     "@angular/core": "^8.2.0"

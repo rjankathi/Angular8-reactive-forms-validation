@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RxFormsValidationModule } from 'ng-rxforms';
+import { RxFormsValidationModule } from 'dist/ng-rxforms-validation';
 
 @NgModule({
   declarations: [
@@ -13,8 +13,8 @@ import { RxFormsValidationModule } from 'ng-rxforms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RxFormsValidationModule,
     ReactiveFormsModule,
+    RxFormsValidationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

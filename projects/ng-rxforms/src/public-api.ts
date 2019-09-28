@@ -2,6 +2,6 @@
  * Public API Surface of ng-rxforms
  */
 
-export * from './lib/ng-rxforms.service';
-export * from './lib/ng-rxforms.component';
-export * from './lib/ng-rxforms.module';
+export * from './lib/ng-rxforms-validation.service';
+export * from './lib/ng-rxforms-validation.component';
+export * from './lib/ng-rxforms-validation.module';

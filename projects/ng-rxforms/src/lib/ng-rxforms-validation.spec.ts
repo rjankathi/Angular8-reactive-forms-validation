@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RxFormsValidationService } from './ng-rxforms.service';
+import { RxFormsValidationService } from './ng-rxforms-validation.service';
 
 describe('RxFormsValidationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

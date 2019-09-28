@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxValidationComponent } from './ng-rxforms.component';
+import { RxValidationComponent } from './ng-rxforms-validation.component';
 
 describe('RxValidationComponent', () => {
   let component: RxValidationComponent;
