@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { RxFormsValidationService } from 'rxforms-validation-errors';
+import { RxFormsValidationService } from 'ng-rxforms';
 import {FormControl,FormArray,FormGroup,FormBuilder, Validators} from '@angular/forms';
 
 @Component({

@@ -1,5 +1,5 @@
 {
-  "name": "ng-rxforms-validation",
+  "name": "ng-rxforms",
   "version": "1.0.0",
   "description": "A simple library service to bes used with Angular Reactive forms to unit test validation logic, avoid har coding validation mes=ssages in the the apps html and change validation dynamically at run time.",
   "author": "Raj Ankathi",

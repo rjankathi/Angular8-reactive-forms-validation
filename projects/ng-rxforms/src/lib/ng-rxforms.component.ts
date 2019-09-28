@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rxfv-validation--lib',
+  selector: 'rxforms-validation',
   template: `
     <p>
-      ng-rxforms-validation-lib works!
+      ng-rxforms works!
     </p>
   `,
   styles: []

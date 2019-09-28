@@ -1,12 +1,10 @@
-# RxForms
-
-## RxFormsValidation
+# RxFormsValidation
 
 A Simple Angular library service to validate reactive forms inside the component
 
 ## Purpose
 
-Move validation messages to the component class which helps 
+Move validation messages to the component class which helps.
 
 - Easily unit test validation logic.
 - No hard coding of validation messages in the application like in the example html below.
@@ -66,7 +64,7 @@ imports:[RxFormsValidationModule]
 import { RxFormsValidationService } from 'ng-rxforms';
 ```
 
-4. Import RxFormsValidationService into the component you like to remove redundant validation messages in side the components html.
+4. Import `RxFormsValidationService` into the component you like to remove redundant validation messages in side the components html.
 
    - In our tester app I have imported into the app.component.ts like below
   
@@ -77,14 +75,14 @@ import { RxFormsValidationService } from 'ng-rxforms';
   import { RxFormsValidationService } from 'ng-rxforms';
   ```
 
-6. Inject RxFormsValidationService  
+6. Inject `RxFormsValidationService`  
   
   ```javascript
     constructor(private _validationMessages: RxFormsValidationService){}
   ```
 
 7. for any validation messages on the forms use the `FormGroup` i.e employeeForm in our app. When any of the form control value in employee form changes the function validate() is called which triggers the RxFormsValidationService's showValidationErrors() method. You can do this in ngOnInit()
-   
+
    ```javascript
     this.employeeForm.valueChanges.subscribe(data =>{
       this.validate();
@@ -92,7 +90,7 @@ import { RxFormsValidationService } from 'ng-rxforms';
    ```
 
 8. Use the showValidationMessages() method.
- 
+
     ```javascript
      validate(){
     this._validationMessages.showValidationErrors(this.form, this.formErrors,this.validationMessages)
@@ -147,6 +145,5 @@ import { RxFormsValidationService } from 'ng-rxforms';
 ---
 **NOTE**
 
-RxFormsValidationErrors library depends on ReactiveFormsModule( Ofcourse angular needs it to work with Reactive Forms right ;) )
-
+RxFormsValidation library depends on ReactiveFormsModule( Ofcourse angular needs it to work with Reactive Forms right ;) )
 ---
