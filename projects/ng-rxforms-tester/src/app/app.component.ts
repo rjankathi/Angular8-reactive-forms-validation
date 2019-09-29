@@ -69,4 +69,28 @@ export class AppComponent implements OnInit {
     this._validationErrors.showValidationMessages(this.employeeForm, this.formErrors,this.validationMessages)
   }
 
+  loadData():void{
+    this.employeeForm.patchValue({
+      fullName: "SoRa Inc.",
+      emailGroup:{
+        email: "mail@sora.com",
+        confirmEmail:"mail@sora.com"
+      },
+      phone:'213-262-9765'
+    });
+
+    this.setSkills();
+  };
+
+  get skills(): FormArray{
+    return this.employeeForm.get('skills') as FormArray
+  }
+
+  setSkills(){
+    this.skills.setValue([
+      {skillName: 'C#',experienceInYears:9,proficiency:'beginner' }
+    ]);
+  }
+
+
 }

@@ -4,9 +4,11 @@
 
 A Simple Angular library service to validate reactive forms inside the component
 
+![Image ng-rxforms-validation](https://github.com/rjankathi/Angular8-reactive-forms-validation/tree/master/projects/ng-rxforms-tester/src/assets/RxFormsValidation.png)
+
 ## Purpose
 
-Move validation messages to the component class which helps 
+Move validation messages to the component class which helps
 
 - Easily unit test validation logic.
 - No hard coding of validation messages in the application like in the example html below.
