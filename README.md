@@ -4,7 +4,7 @@
 
 A Simple Angular library service to validate reactive forms inside the component
 
-![Image ng-rxforms-validation](https://github.com/rjankathi/Angular8-reactive-forms-validation/tree/master/projects/ng-rxforms-tester/src/assets/RxFormsValidation.png)
+![Image ng-rxforms-validation](https://github.com/rjankathi/Angular8-reactive-forms-validation/blob/master/projects/ng-rxforms-tester/src/assets/RxFormsValidation.PNG)
 
 ## Purpose
 
